@@ -1,5 +1,7 @@
 @echo off
 
+set install_dir=%cd%
+
 IF NOT EXIST install.txt (
   goto END
 ) ELSE (
@@ -8,7 +10,7 @@ IF NOT EXIST install.txt (
 
 IF %errlevel% EQU 1 goto END
 :SERVERSTART
-cd %cd%\steamapps\common\SatisfactoryDedicatedServer
+cd %install_dir%\steamapps\common\SatisfactoryDedicatedServer
 FactoryServer.exe -log -unattended
 
 :END
